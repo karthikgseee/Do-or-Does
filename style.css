@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  background-color: #009688;
+  font-family: "Montserrat", san-serif;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.container {
+  width: 1024px;
+  height: 728px;
+  background-color: #ffffff;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.heading {
+  padding-top: 30px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.questions {
+  padding-bottom: 30px;
+  font-size: 26px;
+}
+
+.btn {
+  padding: 15px 45px;
+  background-color: #009688;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Montserrat", san-serif;
+  cursor: pointer;
+}
+
+.scorebox{
+  background-color: #604ac5;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  
+}
+
+.tick {
+  content: url("icons/tickicon.png");
+  width: 20px;
+}
+
+.wrong {
+  content: url("icons/wrongicon.png");
+  width: 20px;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}

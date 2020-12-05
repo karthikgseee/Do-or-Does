@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do or Does</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Choose do or does to complete the questions.</h1>
+
+        <div class="questions 1"> a) <select name="select" id="option_1" style="font-size: 20px;">
+            <option value="Do">Do</option>
+            <option value="Does">Does</option>
+
+          </select> you come from Doha? 
+          <span id="answer_1" class="tick hide"></span>
+
+         </div>
+
+          <div class="questions 2"> b) <select name="select" id="option_2" style="font-size: 20px;">
+            <option value="Do">Do</option>
+            <option value="Does">Does</option>
+
+          </select> I need better exam results?
+          <span id="answer_2" class="tick hide"></span>
+
+         
+        </div>
+
+
+          <div class="questions 3"> c) <select name="select"  id="option_3" style="font-size: 20px;">
+            <option value="Do">Do</option>
+            <option value="Does">Does</option>
+
+          </select> your brother live at home?
+          <span id="answer_3" class="tick hide"></span>
+         
+        </div>
+
+
+          <div class="questions 4"> d) <select name="select" id="option_4" style="font-size: 20px;" >
+            <option value="Do">Do</option>
+            <option value="Does">Does</option>
+
+          </select> your friends meet up often?
+          <span id="answer_4" class="tick hide"></span>
+          
+        </div>
+
+
+          <div class="questions 5"> e) <select name="select" id="option_5" style="font-size: 20px;">
+            <option value="Do">Do</option>
+            <option value="Does">Does</option>
+
+          </select> Natalie walk to work?
+          <span id="answer_5" class="tick hide"></span>
+        </div>
+
+          
+          <div class="questions 6"> f) <select name="select" id="option_6" style="font-size: 20px;">
+            <option value="Do">Do</option>
+            <option value="Does">Does</option>
+
+          </select>  we choose our new modules at the end of each term?
+          <span id="answer_6" class="tick hide"></span></div> 
+
+        
+          <button type="button " class="btn" id="submit"  onclick="SubmitAnswers();">Submit</button>
+           <span class="scorebox">
+            <span>Score :</span>
+            <span id="Totalscore"></span><span>/6</span>
+
+           </span>
+          <button type="button" class="btn" id="submit" onclick="CheckAnswers();">Check Answer</button>
+          <button type="button" class="btn" id="submit" onclick="ShowAnswers();">Show Answer</button>
+          
+          <button type="button" class="btn" id="Refresh" onclick="refresh();">Refresh</button>
+
+          
+
+    </div> 
+
+    <script type="text/javascript">
+      function SubmitAnswers()
+      {
+          let score=0;
+      
+          score= (document.getElementById("option_1").value=="Do" )?++score:score;
+          score= (document.getElementById("option_2").value=="Do")?++score:score;
+          score= (document.getElementById("option_3").value=="Does")?++score:score;
+          score= (document.getElementById("option_4").value=="Do")?++score:score;
+          score= (document.getElementById("option_5").value=="Does")?++score:score;
+          score= (document.getElementById("option_6").value=="Do")?++score:score;
+          document.getElementById("Totalscore").innerHTML=score; 
+      }
+      
+      function CheckAnswers()
+      {
+          document.getElementById("answer_1").className= (document.getElementById("option_1").value=="Do")?"tick":"wrong";
+          document.getElementById("answer_2").className= (document.getElementById("option_2").value=="Do")?"tick":"wrong";
+          document.getElementById("answer_3").className= (document.getElementById("option_3").value=="Does")?"tick":"wrong";
+          document.getElementById("answer_4").className= (document.getElementById("option_4").value=="Do")?"tick":"wrong";
+          document.getElementById("answer_5").className= (document.getElementById("option_5").value=="Does")?"tick":"wrong";
+          document.getElementById("answer_6").className= (document.getElementById("option_6").value=="Do")?"tick":"wrong";
+          document.getElementById("Totalscore").innerHTML="";
+      }
+  
+      function ShowAnswers()
+      {
+          hideAnswers();
+          document.getElementById("option_1").value="Do" ;
+          document.getElementById("option_2").value="Do";
+          document.getElementById("option_3").value="Does";
+          document.getElementById("option_4").value="Do";
+          document.getElementById("option_5").value="Does";
+          document.getElementById("option_6").value="Do";
+      }
+  
+      function refresh()
+      {
+          document.getElementById("option_1").value="Do";
+          document.getElementById("option_2").value="Do";
+          document.getElementById("option_3").value="Do";
+          document.getElementById("option_4").value="Do";
+          document.getElementById("option_5").value="Do";
+          document.getElementById("option_6").value="Do";
+  
+          hideAnswers();
+  
+          document.getElementById("Totalscore").innerHTML="";
+  
+      }
+  
+      function hideAnswers()
+      { 
+          document.getElementById("answer_1").className="hide";
+          document.getElementById("answer_2").className="hide";
+          document.getElementById("answer_3").className="hide";
+          document.getElementById("answer_4").className="hide";
+          document.getElementById("answer_5").className="hide";
+          document.getElementById("answer_6").className="hide";
+      }
+  </script>
+</body>
+</html>
